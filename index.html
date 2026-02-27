@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Ben Co. | Real Estate</title>
+    
+    <!-- Google Fonts: Montserrat & Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons for Socials/Stars -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkGrey: '#2A2A2A',
+                        blackBg: '#0A0A0A',
+                    },
+                    fontFamily: {
+                        /* Agrandir Wide is a premium font. 
+                           We define it first so if it's installed locally or imported elsewhere, it works.
+                           Otherwise, it falls back to Montserrat for a clean, wide geometry. 
+                        */
+                        agrandir: ['"Agrandir Wide"', 'Montserrat', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        quicksand: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        body {
+            background-color: #0A0A0A;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Agrandir Wide', 'Montserrat', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .ghost-btn {
+            border: 1px solid #ffffff;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .ghost-btn:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Testimonial Image Cutout Effect */
+        .testimonial-img-cutout {
+            border-color: #0A0A0A; /* Matches pure black background */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HERO SECTION -->
+    <header class="relative w-full h-screen min-h-[600px] flex flex-col">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1613490908236-0ed71ca2cebd?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Luxury Real Estate" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/60 bg-gradient-to-b from-black/80 via-black/40 to-black/80"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="relative z-10 w-full px-6 py-8 md:px-12 flex items-center justify-between font-quicksand">
+            <div class="text-2xl font-bold tracking-widest uppercase">
+                LOGO.
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="#" class="hover:text-gray-300 transition">Home</a>
+                <a href="#properties" class="hover:text-gray-300 transition">Listings</a>
+                <a href="#about" class="hover:text-gray-300 transition">About</a>
+                <a href="#faqs" class="hover:text-gray-300 transition">FAQs</a>
+            </div>
+
+            <div>
+                <a href="#contact" class="ghost-btn px-6 py-2 rounded-full text-sm font-medium inline-block">
+                    Get Quote
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 flex-grow flex flex-col items-center justify-center text-center px-4">
+            <h1 class="heading-font text-5xl md:text-7xl font-normal leading-tight mb-12">
+                Where Extraordinary<br />Living Begins
+            </h1>
+            <a href="#properties" class="ghost-btn px-8 py-4 text-xs md:text-sm font-semibold tracking-[0.15em] font-montserrat">
+                EXPLORE EXCLUSIVE PROPERTIES
+            </a>
+        </div>
+    </header>
+
+    <!-- PROPERTIES SECTION -->
+    <section id="properties" class="bg-darkGrey py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="heading-font text-4xl text-center mb-16">Properties</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Card 1 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Detail</h3>
+                            <p class="text-sm text-gray-400 font-quicksand">Description</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Detail</h3>
+                            <p class="text-sm text-gray-400 font-quicksand">Description</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Detail</h3>
+                            <p class="text-sm text-gray-400 font-quicksand">Description</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="ghost-btn px-10 py-3 text-sm font-semibold tracking-widest uppercase">CALL TO ACTION</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFF PLAN PROJECTS SECTION -->
+    <section class="bg-blackBg py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="heading-font text-4xl text-center mb-16">Off Plan Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Card 1 -->
+                <div class="bg-[#1A1A1A] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Detail</h3>
+                            <p class="text-sm text-gray-400 font-quicksand">Description</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#1A1A1A] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800&auto=format&fit=crop" alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Detail</h3>
+                            <p class="text-sm text-gray-400 font-quicksand">Description</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#1A1A1A] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=800&auto=format&fit=crop" alt="Project" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Detail</h3>
+                            <p class="text-sm text-gray-400 font-quicksand">Description</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="ghost-btn px-10 py-3 text-sm font-semibold tracking-widest uppercase">CALL TO ACTION</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="bg-darkGrey py-24 px-6 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="heading-font text-4xl text-center mb-16">About</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+                <!-- Bio Text -->
+                <div class="font-quicksand text-gray-300 leading-relaxed space-y-6 text-[15px]">
+                    <p>
+                        Hey there! I'm just a random person navigating this wild world, figuring things out one day at a time. I don't have a grand corporate mission statement or a fancy "about us" page because, well, I'm just me.
+                    </p>
+                    <p>
+                        I'm someone who loves [mention a general interest, e.g., learning new things, exploring different ideas, connecting with people]. I believe in [mention a general value, e.g., kindness, the power of a good laugh, staying curious]. My journey so far has been a mix of [mention a couple of broad experiences, e.g., unexpected detours and exciting discoveries], and I'm always open to what comes next.
+                    </p>
+                    <p>
+                        So, if you're looking for someone who's [mention a positive, relatable trait, e.g., down-to-earth, always up for a chat, genuinely interested in the world], you've found them!
+                    </p>
+                </div>
+
+                <!-- Image & Socials -->
+                <div class="flex flex-col items-center">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop" alt="About Ali Ben" class="w-full max-w-md rounded-[2rem] aspect-square object-cover shadow-2xl mb-8">
+                    
+                    <div class="flex gap-6">
+                        <a href="#" class="text-white hover:text-gray-400 transition"><i class="ph ph-instagram-logo text-3xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-400 transition"><i class="ph ph-facebook-logo text-3xl"></i></a>
+                        <a href="#" class="text-white hover:text-gray-400 transition"><i class="ph ph-x-logo text-3xl"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 text-center divide-x divide-gray-600">
+                <div>
+                    <h4 class="font-montserrat text-lg md:text-xl font-medium mb-2">Clients</h4>
+                    <p class="font-bold text-5xl md:text-7xl">50</p>
+                </div>
+                <div>
+                    <h4 class="font-montserrat text-lg md:text-xl font-medium mb-2">Sold</h4>
+                    <p class="font-bold text-5xl md:text-7xl">100+</p>
+                </div>
+                <div>
+                    <h4 class="font-montserrat text-lg md:text-xl font-medium mb-2">Worth</h4>
+                    <p class="font-bold text-5xl md:text-7xl">$2.2m</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="bg-blackBg py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="heading-font text-4xl text-center mb-24">Testimonials</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+                
+                <!-- Testimonial 1 -->
+                <div class="border border-white/50 rounded-2xl p-8 relative pt-14">
+                    <!-- Cutout Image -->
+                    <div class="absolute -top-10 left-8">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-20 h-20 rounded-full border-[8px] testimonial-img-cutout object-cover">
+                    </div>
+                    
+                    <div class="flex flex-col h-full">
+                        <div class="text-center mb-6 border-b border-white/20 pb-4">
+                            <h4 class="font-bold text-lg">White Guy</h4>
+                            <p class="text-xs text-gray-400 font-quicksand">Location</p>
+                        </div>
+                        <p class="text-sm font-quicksand text-gray-300 text-center flex-grow leading-relaxed mb-6">
+                            "I was really impressed with InnovateForge's new project management software! It completely transformed how I organize my team's tasks and track progress. The intuitive drag-and-drop interface was incredibly helpful, and I'd highly recommend it to anyone looking for a more efficient and user-friendly way to manage their projects."
+                        </p>
+                        <div class="flex justify-center gap-1 text-white">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="border border-white/50 rounded-2xl p-8 relative pt-14">
+                    <!-- Cutout Image -->
+                    <div class="absolute -top-10 left-8">
+                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Profile" class="w-20 h-20 rounded-full border-[8px] testimonial-img-cutout object-cover">
+                    </div>
+                    
+                    <div class="flex flex-col h-full">
+                        <div class="text-center mb-6 border-b border-white/20 pb-4">
+                            <h4 class="font-bold text-lg">White Guy</h4>
+                            <p class="text-xs text-gray-400 font-quicksand">Location</p>
+                        </div>
+                        <p class="text-sm font-quicksand text-gray-300 text-center flex-grow leading-relaxed mb-6">
+                            "I was really impressed with InnovateForge's new project management software! It completely transformed how I organize my team's tasks and track progress. The intuitive drag-and-drop interface was incredibly helpful, and I'd highly recommend it to anyone looking for a more efficient and user-friendly way to manage their projects."
+                        </p>
+                        <div class="flex justify-center gap-1 text-white">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="border border-white/50 rounded-2xl p-8 relative pt-14">
+                    <!-- Cutout Image -->
+                    <div class="absolute -top-10 left-8">
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Profile" class="w-20 h-20 rounded-full border-[8px] testimonial-img-cutout object-cover">
+                    </div>
+                    
+                    <div class="flex flex-col h-full">
+                        <div class="text-center mb-6 border-b border-white/20 pb-4">
+                            <h4 class="font-bold text-lg">White Guy</h4>
+                            <p class="text-xs text-gray-400 font-quicksand">Location</p>
+                        </div>
+                        <p class="text-sm font-quicksand text-gray-300 text-center flex-grow leading-relaxed mb-6">
+                            "I was really impressed with InnovateForge's new project management software! It completely transformed how I organize my team's tasks and track progress. The intuitive drag-and-drop interface was incredibly helpful, and I'd highly recommend it to anyone looking for a more efficient and user-friendly way to manage their projects."
+                        </p>
+                        <div class="flex justify-center gap-1 text-white">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs SECTION -->
+    <section id="faqs" class="bg-darkGrey py-24 px-6 md:px-12">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="heading-font text-4xl text-center mb-12">FAQs</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details class="group border border-white/50 bg-transparent">
+                    <summary class="relative w-full py-4 px-6 text-center font-montserrat uppercase text-sm tracking-widest hover:bg-white/5 transition cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        YOUR QUESTION HERE
+                        <i class="ph ph-caret-down absolute right-6 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-180 text-lg"></i>
+                    </summary>
+                    <div class="px-8 pb-6 text-center font-quicksand text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-4 mx-4">
+                        This is the answer to your question. We pride ourselves on transparency and provide detailed information to ensure you have everything you need to make an informed decision regarding our exclusive properties.
+                    </div>
+                </details>
+                <!-- FAQ Item 2 -->
+                <details class="group border border-white/50 bg-transparent">
+                    <summary class="relative w-full py-4 px-6 text-center font-montserrat uppercase text-sm tracking-widest hover:bg-white/5 transition cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        YOUR QUESTION HERE
+                        <i class="ph ph-caret-down absolute right-6 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-180 text-lg"></i>
+                    </summary>
+                    <div class="px-8 pb-6 text-center font-quicksand text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-4 mx-4">
+                        This is the answer to your question. We pride ourselves on transparency and provide detailed information to ensure you have everything you need to make an informed decision regarding our exclusive properties.
+                    </div>
+                </details>
+                <!-- FAQ Item 3 -->
+                <details class="group border border-white/50 bg-transparent">
+                    <summary class="relative w-full py-4 px-6 text-center font-montserrat uppercase text-sm tracking-widest hover:bg-white/5 transition cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        YOUR QUESTION HERE
+                        <i class="ph ph-caret-down absolute right-6 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-180 text-lg"></i>
+                    </summary>
+                    <div class="px-8 pb-6 text-center font-quicksand text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-4 mx-4">
+                        This is the answer to your question. We pride ourselves on transparency and provide detailed information to ensure you have everything you need to make an informed decision regarding our exclusive properties.
+                    </div>
+                </details>
+                <!-- FAQ Item 4 -->
+                <details class="group border border-white/50 bg-transparent">
+                    <summary class="relative w-full py-4 px-6 text-center font-montserrat uppercase text-sm tracking-widest hover:bg-white/5 transition cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        YOUR QUESTION HERE
+                        <i class="ph ph-caret-down absolute right-6 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-180 text-lg"></i>
+                    </summary>
+                    <div class="px-8 pb-6 text-center font-quicksand text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-4 mx-4">
+                        This is the answer to your question. We pride ourselves on transparency and provide detailed information to ensure you have everything you need to make an informed decision regarding our exclusive properties.
+                    </div>
+                </details>
+                <!-- FAQ Item 5 -->
+                <details class="group border border-white/50 bg-transparent">
+                    <summary class="relative w-full py-4 px-6 text-center font-montserrat uppercase text-sm tracking-widest hover:bg-white/5 transition cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        YOUR QUESTION HERE
+                        <i class="ph ph-caret-down absolute right-6 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-180 text-lg"></i>
+                    </summary>
+                    <div class="px-8 pb-6 text-center font-quicksand text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-4 mx-4">
+                        This is the answer to your question. We pride ourselves on transparency and provide detailed information to ensure you have everything you need to make an informed decision regarding our exclusive properties.
+                    </div>
+                </details>
+                <!-- FAQ Item 6 -->
+                <details class="group border border-white/50 bg-transparent">
+                    <summary class="relative w-full py-4 px-6 text-center font-montserrat uppercase text-sm tracking-widest hover:bg-white/5 transition cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                        YOUR QUESTION HERE
+                        <i class="ph ph-caret-down absolute right-6 top-1/2 -translate-y-1/2 transition-transform duration-300 group-open:rotate-180 text-lg"></i>
+                    </summary>
+                    <div class="px-8 pb-6 text-center font-quicksand text-sm text-gray-300 leading-relaxed border-t border-white/10 pt-4 mx-4">
+                        This is the answer to your question. We pride ourselves on transparency and provide detailed information to ensure you have everything you need to make an informed decision regarding our exclusive properties.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER SECTION -->
+    <footer id="contact" class="bg-blackBg py-24 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            <!-- Contact Form -->
+            <div class="border border-white/50 p-6 md:p-8">
+                <form action="#" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="YOUR NAME" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                        <input type="email" placeholder="EMAIL" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                    </div>
+                    <input type="text" placeholder="SUBJECT" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                    <textarea rows="6" placeholder="YOUR MESSAGAE" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition resize-none"></textarea>
+                    
+                    <div class="text-center md:text-left mt-6">
+                        <button type="submit" class="ghost-btn px-12 py-3 text-sm font-semibold tracking-widest uppercase">
+                            SEND
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Logo & Info -->
+            <div class="text-center flex flex-col items-center justify-center">
+                <h2 class="text-7xl md:text-8xl font-bold tracking-widest mb-6 uppercase">LOGO.</h2>
+                <div class="text-xl font-montserrat space-y-2">
+                    <p>Location</p>
+                    <p>Contact Details</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
