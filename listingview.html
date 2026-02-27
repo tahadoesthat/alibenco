@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Villa Beverly Hills | Ali Ben Co.</title>
+    
+    <!-- Google Fonts: Montserrat & Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons for Socials/Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkGrey: '#2A2A2A',
+                        blackBg: '#0A0A0A',
+                    },
+                    fontFamily: {
+                        agrandir: ['"Agrandir Wide"', 'Montserrat', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        quicksand: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        body {
+            background-color: #0A0A0A;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Agrandir Wide', 'Montserrat', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .ghost-btn {
+            border: 1px solid #ffffff;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .ghost-btn:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Hide Scrollbar for Slider but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HERO IMAGE & NAVIGATION -->
+    <header class="relative w-full h-[60vh] min-h-[500px] flex flex-col">
+        <!-- Background Property Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Modern Villa Beverly Hills" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-blackBg"></div>
+        </div>
+
+        <!-- Navigation (Consistent) -->
+        <nav class="relative z-10 w-full px-6 py-8 md:px-12 flex items-center justify-between font-quicksand">
+            <div class="text-2xl font-bold tracking-widest uppercase">
+                <a href="index.html">LOGO.</a>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+                <a href="listings.html" class="hover:text-gray-300 transition">Listings</a>
+                <a href="index.html#about" class="hover:text-gray-300 transition">About</a>
+                <a href="index.html#faqs" class="hover:text-gray-300 transition">FAQs</a>
+            </div>
+
+            <div>
+                <a href="#contact" class="ghost-btn px-6 py-2 rounded-full text-sm font-medium inline-block">
+                    Get Quote
+                </a>
+            </div>
+        </nav>
+
+        <!-- Status Badge -->
+        <div class="relative z-10 flex-grow flex flex-col items-start justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto w-full">
+            <span class="bg-white text-black text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest font-montserrat mb-6 shadow-lg">For Sale</span>
+        </div>
+    </header>
+
+    <!-- MAIN PROPERTY DETAILS SECTION -->
+    <section class="bg-blackBg py-12 px-6 md:px-12 relative z-20 -mt-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 xl:gap-20">
+            
+            <!-- LEFT COLUMN: Property Info -->
+            <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Title & Price -->
+                <div class="border-b border-white/10 pb-10">
+                    <h1 class="heading-font text-4xl md:text-5xl lg:text-6xl font-normal leading-tight mb-4">
+                        Modern Villa Beverly Hills
+                    </h1>
+                    <p class="text-gray-400 font-quicksand text-lg mb-6 flex items-center gap-2">
+                        <i class="ph ph-map-pin text-xl text-white"></i> 1234 Trousdale Estates, Beverly Hills, CA 90210
+                    </p>
+                    <p class="font-montserrat text-4xl font-bold tracking-tight text-white">$8,500,000</p>
+                </div>
+
+                <!-- Key Metrics Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-4">
+                    <div class="flex items-center gap-4 bg-[#111] p-4 rounded-2xl border border-white/5">
+                        <i class="ph ph-bed text-3xl text-gray-400"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 font-quicksand uppercase tracking-wider">Bedrooms</p>
+                            <p class="font-bold text-lg">5</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-[#111] p-4 rounded-2xl border border-white/5">
+                        <i class="ph ph-shower text-3xl text-gray-400"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 font-quicksand uppercase tracking-wider">Bathrooms</p>
+                            <p class="font-bold text-lg">6</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-[#111] p-4 rounded-2xl border border-white/5">
+                        <i class="ph ph-bounding-box text-3xl text-gray-400"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 font-quicksand uppercase tracking-wider">Area</p>
+                            <p class="font-bold text-lg">7,500 sqft</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-[#111] p-4 rounded-2xl border border-white/5">
+                        <i class="ph ph-car text-3xl text-gray-400"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 font-quicksand uppercase tracking-wider">Garage</p>
+                            <p class="font-bold text-lg">3 Cars</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <h3 class="text-2xl font-montserrat font-bold mb-6">About this Property</h3>
+                    <div class="font-quicksand text-gray-300 leading-relaxed space-y-4 text-[15px]">
+                        <p>
+                            Experience the pinnacle of luxury living in this architectural masterpiece located in the exclusive Trousdale Estates of Beverly Hills. Designed with meticulous attention to detail, this modern villa offers sweeping panoramic views of the city skyline and the Pacific Ocean.
+                        </p>
+                        <p>
+                            The open-concept floor plan seamlessly integrates indoor and outdoor living. Floor-to-ceiling automated glass doors slide away to reveal a spectacular zero-edge infinity pool, a sunken fire pit, and expansive entertainment decks. The chef's kitchen features custom Italian cabinetry, state-of-the-art Miele appliances, and a massive marble island.
+                        </p>
+                        <p>
+                            The primary suite is a private sanctuary, boasting a private terrace, a spa-like bathroom with a freestanding soaking tub, and dual walk-in closets. Additional amenities include a fully equipped home theater, a climate-controlled wine cellar, and a cutting-edge smart home automation system.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Features & Amenities -->
+                <div>
+                    <h3 class="text-2xl font-montserrat font-bold mb-6">Features & Amenities</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8 font-quicksand text-gray-300 text-sm">
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> Infinity Pool</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> Smart Home System</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> Home Theater</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> Wine Cellar</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> Chef's Kitchen</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> Panoramic Views</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> Outdoor Kitchen</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> Gym / Fitness Room</li>
+                        <li class="flex items-center gap-3"><i class="ph ph-check-circle text-white text-lg"></i> 24/7 Security</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Sticky Lead Form -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-10 bg-[#111] border border-white/20 rounded-3xl p-8 shadow-2xl">
+                    <h4 class="text-xl font-montserrat font-bold mb-2">Schedule a Viewing</h4>
+                    <p class="text-xs font-quicksand text-gray-400 mb-8">Contact our exclusive agents to arrange a private tour.</p>
+                    
+                    <form action="#" class="space-y-4">
+                        <input type="text" placeholder="Full Name" class="w-full bg-transparent border border-white/30 p-3 rounded-lg text-sm font-montserrat placeholder-gray-500 focus:outline-none focus:border-white transition">
+                        <input type="email" placeholder="Email Address" class="w-full bg-transparent border border-white/30 p-3 rounded-lg text-sm font-montserrat placeholder-gray-500 focus:outline-none focus:border-white transition">
+                        <input type="tel" placeholder="Phone Number" class="w-full bg-transparent border border-white/30 p-3 rounded-lg text-sm font-montserrat placeholder-gray-500 focus:outline-none focus:border-white transition">
+                        <textarea rows="4" placeholder="I am interested in..." class="w-full bg-transparent border border-white/30 p-3 rounded-lg text-sm font-montserrat placeholder-gray-500 focus:outline-none focus:border-white transition resize-none"></textarea>
+                        
+                        <button type="submit" class="w-full bg-white text-black hover:bg-gray-200 transition py-4 rounded-lg text-sm font-bold tracking-widest uppercase mt-4">
+                            Request Details
+                        </button>
+                        
+                        <div class="flex items-center justify-center gap-4 pt-4 border-t border-white/10 mt-6">
+                            <a href="#" class="ghost-btn p-3 rounded-full flex items-center justify-center"><i class="ph ph-whatsapp-logo text-xl"></i></a>
+                            <a href="#" class="ghost-btn p-3 rounded-full flex items-center justify-center"><i class="ph ph-phone text-xl"></i></a>
+                            <a href="#" class="ghost-btn p-3 rounded-full flex items-center justify-center"><i class="ph ph-envelope-simple text-xl"></i></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SIMILAR PROPERTIES SLIDER (Mobile Swipeable, Desktop Grid) -->
+    <section class="bg-darkGrey py-24 px-6 md:px-12 border-t border-white/10 overflow-hidden">
+        <div class="max-w-7xl mx-auto relative">
+            
+            <div class="flex items-end justify-between mb-12">
+                <h2 class="heading-font text-3xl md:text-4xl">Relevant Properties</h2>
+                <div class="hidden md:flex gap-2">
+                    <button class="ghost-btn w-12 h-12 rounded-full flex items-center justify-center"><i class="ph ph-arrow-left text-xl"></i></button>
+                    <button class="ghost-btn w-12 h-12 rounded-full flex items-center justify-center"><i class="ph ph-arrow-right text-xl"></i></button>
+                </div>
+            </div>
+            
+            <!-- 
+                Slider Container: 
+                - Mobile: flex, horizontal scroll, snap snapping, hidden scrollbar.
+                - Desktop: normal CSS grid.
+            -->
+            <div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:grid-cols-3 md:gap-8 pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+                
+                <!-- Card 1 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">For Sale</div>
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2 truncate">Contemporary Estate</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$12,250,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4 truncate">7 Beds • 8 Baths • 10,200 sqft</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-black border border-white text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">Off-Plan</div>
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2 truncate">The Skyline Penthouse</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$4,100,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4 truncate">3 Beds • 3.5 Baths • 3,100 sqft</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col min-w-[85vw] sm:min-w-[60vw] md:min-w-0 snap-center">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">For Sale</div>
+                        <img src="https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2 truncate">Lakeside Retreat</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$5,750,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4 truncate">4 Beds • 5 Baths • 5,800 sqft</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER SECTION (Consistent with Homepage) -->
+    <footer id="contact" class="bg-blackBg py-24 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            <!-- Contact Form -->
+            <div class="border border-white/50 p-6 md:p-8">
+                <form action="#" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="YOUR NAME" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                        <input type="email" placeholder="EMAIL" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                    </div>
+                    <input type="text" placeholder="SUBJECT" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                    <textarea rows="6" placeholder="YOUR MESSAGAE" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition resize-none"></textarea>
+                    
+                    <div class="text-center md:text-left mt-6">
+                        <button type="submit" class="ghost-btn px-12 py-3 text-sm font-semibold tracking-widest uppercase">
+                            SEND
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Logo & Info -->
+            <div class="text-center flex flex-col items-center justify-center">
+                <h2 class="text-7xl md:text-8xl font-bold tracking-widest mb-6 uppercase">LOGO.</h2>
+                <div class="text-xl font-montserrat space-y-2">
+                    <p>Location</p>
+                    <p>Contact Details</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
