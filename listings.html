@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings | Ali Ben Co.</title>
+    
+    <!-- Google Fonts: Montserrat & Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons for Socials/Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkGrey: '#2A2A2A',
+                        blackBg: '#0A0A0A',
+                    },
+                    fontFamily: {
+                        /* Agrandir Wide fallback to Montserrat for wide geometry */
+                        agrandir: ['"Agrandir Wide"', 'Montserrat', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        quicksand: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities - Keeping consistency with homepage */
+        body {
+            background-color: #0A0A0A;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Agrandir Wide', 'Montserrat', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        .ghost-btn {
+            border: 1px solid #ffffff;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .ghost-btn:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+        
+        /* Stylize select dropdown icon natively */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 95%;
+            background-position-y: 50%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- COMPACT HERO / HEADER SECTION -->
+    <header class="relative w-full h-[40vh] min-h-[350px] flex flex-col">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Luxury Real Estate Listings" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black/70 bg-gradient-to-b from-black/90 via-black/50 to-black/90"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="relative z-10 w-full px-6 py-8 md:px-12 flex items-center justify-between font-quicksand">
+            <div class="text-2xl font-bold tracking-widest uppercase">
+                <a href="index.html">LOGO.</a>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+                <a href="#" class="text-white border-b border-white pb-1 transition">Listings</a>
+                <a href="index.html#about" class="hover:text-gray-300 transition">About</a>
+                <a href="index.html#faqs" class="hover:text-gray-300 transition">FAQs</a>
+            </div>
+
+            <div>
+                <a href="#contact" class="ghost-btn px-6 py-2 rounded-full text-sm font-medium inline-block">
+                    Get Quote
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 flex-grow flex flex-col items-center justify-center text-center px-4">
+            <h1 class="heading-font text-4xl md:text-6xl font-normal leading-tight">
+                Exclusive Listings
+            </h1>
+        </div>
+    </header>
+
+    <!-- SEARCH & FILTER BAR -->
+    <section class="bg-[#111] py-8 border-b border-white/10 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <form class="grid grid-cols-1 md:grid-cols-6 gap-4 items-end">
+                <!-- Search Input -->
+                <div class="flex flex-col space-y-2 md:col-span-2">
+                    <label class="text-xs font-quicksand text-gray-400 uppercase tracking-wider">Search</label>
+                    <div class="relative">
+                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+                        <input type="text" placeholder="Location, Keywords..." class="w-full bg-transparent border border-white/50 p-3 pl-10 text-sm font-montserrat placeholder-gray-500 focus:outline-none focus:border-white transition">
+                    </div>
+                </div>
+
+                <!-- Property Type Dropdown -->
+                <div class="flex flex-col space-y-2">
+                    <label class="text-xs font-quicksand text-gray-400 uppercase tracking-wider">Property Type</label>
+                    <select class="w-full bg-transparent border border-white/50 p-3 pr-8 text-sm font-montserrat text-white focus:outline-none focus:border-white transition">
+                        <option value="" class="bg-darkGrey">All Types</option>
+                        <option value="villa" class="bg-darkGrey">Villa</option>
+                        <option value="apartment" class="bg-darkGrey">Apartment</option>
+                        <option value="offplan" class="bg-darkGrey">Off-Plan</option>
+                        <option value="mansion" class="bg-darkGrey">Mansion</option>
+                    </select>
+                </div>
+
+                <!-- Price Range Dropdown -->
+                <div class="flex flex-col space-y-2">
+                    <label class="text-xs font-quicksand text-gray-400 uppercase tracking-wider">Price Range</label>
+                    <select class="w-full bg-transparent border border-white/50 p-3 pr-8 text-sm font-montserrat text-white focus:outline-none focus:border-white transition">
+                        <option value="" class="bg-darkGrey">Any Price</option>
+                        <option value="1" class="bg-darkGrey">Under $1M</option>
+                        <option value="2" class="bg-darkGrey">$1M - $5M</option>
+                        <option value="3" class="bg-darkGrey">$5M - $10M</option>
+                        <option value="4" class="bg-darkGrey">$10M+</option>
+                    </select>
+                </div>
+
+                <!-- Bedrooms Dropdown -->
+                <div class="flex flex-col space-y-2">
+                    <label class="text-xs font-quicksand text-gray-400 uppercase tracking-wider">Bedrooms</label>
+                    <select class="w-full bg-transparent border border-white/50 p-3 pr-8 text-sm font-montserrat text-white focus:outline-none focus:border-white transition">
+                        <option value="" class="bg-darkGrey">Any</option>
+                        <option value="1" class="bg-darkGrey">1 - 2 Beds</option>
+                        <option value="3" class="bg-darkGrey">3 - 4 Beds</option>
+                        <option value="5" class="bg-darkGrey">5+ Beds</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit" class="ghost-btn w-full py-3 text-sm font-semibold tracking-widest uppercase h-[46px] mt-6 md:mt-0">
+                        Filter
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- LISTINGS GRID SECTION -->
+    <section class="bg-darkGrey py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Card 1 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">For Sale</div>
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Modern Villa Beverly Hills</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$8,500,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4">5 Beds • 6 Baths • 7,500 sqft</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">For Sale</div>
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Contemporary Estate</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$12,250,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4">7 Beds • 8 Baths • 10,200 sqft</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-black border border-white text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">Off-Plan</div>
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">The Skyline Penthouse</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$4,100,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4">3 Beds • 3.5 Baths • 3,100 sqft</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">For Sale</div>
+                        <img src="https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Lakeside Retreat</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$5,750,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4">4 Beds • 5 Baths • 5,800 sqft</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-black border border-white text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">Off-Plan</div>
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Desert Oasis Mansion</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$14,000,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4">6 Beds • 8 Baths • 12,000 sqft</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-[#111] rounded-3xl overflow-hidden shadow-2xl group flex flex-col">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 z-10 bg-white text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest font-montserrat">For Sale</div>
+                        <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=800&auto=format&fit=crop" alt="Property" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-8 pb-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-montserrat mb-2">Minimalist Townhouse</h3>
+                            <p class="text-xl font-bold font-montserrat mb-3">$2,850,000</p>
+                            <p class="text-sm text-gray-400 font-quicksand border-t border-white/10 pt-4">3 Beds • 2.5 Baths • 2,400 sqft</p>
+                        </div>
+                        <div class="flex gap-2 justify-end mt-6">
+                            <span class="w-3 h-3 bg-white rounded-full"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                            <span class="w-3 h-3 bg-white rounded-full opacity-50"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination / Load More -->
+            <div class="text-center mt-12">
+                <button class="ghost-btn px-10 py-3 text-sm font-semibold tracking-widest uppercase inline-flex items-center gap-2 group">
+                    Load More Properties
+                    <i class="ph ph-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                </button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER SECTION (Consistent with Homepage) -->
+    <footer id="contact" class="bg-blackBg py-24 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            
+            <!-- Contact Form -->
+            <div class="border border-white/50 p-6 md:p-8">
+                <form action="#" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="YOUR NAME" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                        <input type="email" placeholder="EMAIL" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                    </div>
+                    <input type="text" placeholder="SUBJECT" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition">
+                    <textarea rows="6" placeholder="YOUR MESSAGAE" class="w-full bg-transparent border border-white/50 p-3 text-sm font-montserrat placeholder-gray-400 focus:outline-none focus:border-white transition resize-none"></textarea>
+                    
+                    <div class="text-center md:text-left mt-6">
+                        <button type="submit" class="ghost-btn px-12 py-3 text-sm font-semibold tracking-widest uppercase">
+                            SEND
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Logo & Info -->
+            <div class="text-center flex flex-col items-center justify-center">
+                <h2 class="text-7xl md:text-8xl font-bold tracking-widest mb-6 uppercase">LOGO.</h2>
+                <div class="text-xl font-montserrat space-y-2">
+                    <p>Location</p>
+                    <p>Contact Details</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
